@@ -1,12 +1,12 @@
 Create a New Account
 <form name="new_account" action="/users" method = "post">
   <br>
-  <input type="text" name="username" placeholder="username" required title="username required">
+  <input type="text" name="user_name" placeholder="username" required title="username required">
   <br>
   <input type="email" name="email" placeholder="email" required title="email required">
   <br>
-  <input type="password" id="password" name="password" placeholder="password" required pattern="\S{6,}" title="password must be 6 characters">
-  <input type="password" id="confirm_password" name="confirm_password" placeholder="confirm password" required pattern="\S{6,}" title="password must be 6 characters"
+  <input type="password" id="password" name="password" placeholder="password" required pattern="\S{6,}" title="password must be 6 characters or longer">
+  <input type="password" id="confirm_password" name="confirm_password" placeholder="confirm password" required pattern="\S{6,}" title="password must be 6 characters or longer">
   <br>
 
   <input type="submit" value ="create">

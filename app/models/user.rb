@@ -2,17 +2,20 @@ class User < ActiveRecord::Base
 
   validates :user_name, presence: true
   validates :email, presence: true
-  validates :email, format: { with: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/, message: "only valid emails" }
+  validates :email, format: { with: /\A[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\z/, message: "only valid emails" }
 
   validate :password_format
 
-  validate :password
+  validates :password, confirmation: true
+  validates :confirm_password, presence: true
 
   include BCrypt
 
   def password
     @password ||= Password.new(password_hash)
   end
+
+
 
   def password=(new_password)
     self.plaintext_password = new_password
