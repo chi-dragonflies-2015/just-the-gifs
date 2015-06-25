@@ -4,7 +4,7 @@
       <input type="submit" value="logout">
     </form>
     <ul>
-      <li><a href="/users/<%=@user.id%>">My Page </a></li>
+      <li><a href="/users/<%=@current_user.id%>">My Page </a></li>
     </ul>
   <% else %>
     <form name="login" action="/login" method = "post">
