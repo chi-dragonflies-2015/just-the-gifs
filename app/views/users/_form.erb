@@ -1,0 +1,8 @@
+<br>
+  <input type="text" name="user_name" placeholder="username" value="<%=@current_user.user_name%>" required title="username required">
+  <br>
+  <input type="email" name="email" placeholder="email" value="<%=@current_user.email%>" required title="email required">
+  <br>
+  <input type="password" id="password" name="password" placeholder="password" required pattern="\S{6,}" title="password must be 6 characters or longer">
+  <input type="password" id="confirm_password" name="confirm_password" placeholder="confirm password" required pattern="\S{6,}" title="password must be 6 characters or longer">
+  <br>

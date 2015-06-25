@@ -1,5 +1,7 @@
 get '/users/new' do
   @errors = ""
+  @user = User.new
+  @current_user = User.new
   erb :"/users/new"
 end
 
