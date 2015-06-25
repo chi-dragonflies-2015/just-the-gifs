@@ -9,17 +9,17 @@ Just-the-gifs is a convenient way of creating a personal collection of gifs for 
 * As a User, I want to see paginated display of all the tags that match my search, sorted by popularity (note_count)
 * As a User, I want to be able to create an account
 * As a User, I want to be able to sign into my account
-  *When signed in, I want to be able to add gifs from my search results to my personal collection
-  *When signed in, I want to be able to delete my account
-  *When signed in, I want to be able to clear all gifs from my account
-  *When signed in, I want to be able to remove gifs from my collection
+  * When signed in, I want to be able to add gifs from my search results to my personal collection
+  * When signed in, I want to be able to delete my account
+  * When signed in, I want to be able to clear all gifs from my account
+  * When signed in, I want to be able to remove gifs from my collection
 * As a User, I want to be able to browse other people's collections of gifs
-  *When I'm signed in, I'd like to be able to save their gifs to my own collection as well
-  *When I'm browsing a collection of gifs, I'd like to be able to see
-    *The search term that lead to that gif (category)
-    *The tumblr link to that post
-    *a url link to that element
-    *image size
+  * When I'm signed in, I'd like to be able to save their gifs to my own collection as well
+  * When I'm browsing a collection of gifs, I'd like to be able to see
+    * The search term that lead to that gif (category)
+    * The tumblr link to that post
+    * a url link to that element
+    * image size
 
 ## Databases
 * Users
@@ -61,3 +61,7 @@ Just-the-gifs is a convenient way of creating a personal collection of gifs for 
   - PhotoTags
     - A PhotoTag belongs to a Photo
     - A PhotoTag belongs to a Tag
+
+## Stretch
+
+* Users should be able to add each other as friends to see their collections
