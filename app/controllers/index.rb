@@ -1,4 +1,5 @@
 get '/' do
+  @user = current_user if logged_in?
   erb :index
 end
 
