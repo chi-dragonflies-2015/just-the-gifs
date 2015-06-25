@@ -37,11 +37,11 @@ Just-the-gifs is a convenient way of creating a personal collection of gifs for 
 * Collections
   * User
   * Photo
-  *(Joins User and Photo)
+  * (Joins User and Photo)
 * PhotoTags
   * Tag
   * Photo
-  *(Joins Photo and Tag)
+  * (Joins Photo and Tag)
 
 - Associations
   - Users

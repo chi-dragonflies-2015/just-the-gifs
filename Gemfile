@@ -17,6 +17,8 @@ gem 'shotgun'
 
 gem 'tumblr_client'
 
+gem 'bcrypt'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
