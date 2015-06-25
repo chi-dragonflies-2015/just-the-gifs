@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :email, format: { with: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/, message: "only valid emails" }
 
+  validate :password_format
+
+  validate :password
+
   include BCrypt
 
   def password
