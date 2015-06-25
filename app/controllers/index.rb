@@ -1,4 +1,4 @@
-get '/'
+get '/' do
   erb :index
 end
 

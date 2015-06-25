@@ -30,6 +30,7 @@ get '/users/:id/edit' do |id|
   @user = User.find_by(id: id)
   redirect "/auctions/#{id}" unless authorized?(user)
   erb :"users/edit"
+end
 
 put '/users/:id' do |id|
   @user = User.find_by(id: id)
