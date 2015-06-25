@@ -4,6 +4,7 @@ get '/users/new' do
 end
 
 post '/users' do
+  params.delete("confirm_password")
   @user = User.new(params)
 
   if @user.save

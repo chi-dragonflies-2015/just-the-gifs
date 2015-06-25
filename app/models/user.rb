@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
 
   validate :password_format
 
-  validates :password, confirmation: true
-  validates :confirm_password, presence: true
+  #validates :password, confirmation: true
+  #validates :confirm_password, presence: true
 
   include BCrypt
 
