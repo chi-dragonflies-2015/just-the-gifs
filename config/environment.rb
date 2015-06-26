@@ -49,9 +49,12 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
 
-Tumblr.configure do |config|
-  config.consumer_key = "tQu7kX9NwaRnid1huPLxbrNjB0xgvr2COsVpp6FNi3MsLJwxAh"
-  config.consumer_secret = "2TmxauZyZWZSys7LgrIWeUIgLxLDrSUHA2aXuxiCgtGg9P7YYG"
-end
+# Tumblr.configure do |config|
+#   config.consumer_key = "tQu7kX9NwaRnid1huPLxbrNjB0xgvr2COsVpp6FNi3MsLJwxAh"
+#   config.consumer_secret = "2TmxauZyZWZSys7LgrIWeUIgLxLDrSUHA2aXuxiCgtGg9P7YYG"
+# end
 
-$tumblr_client = Tumblr::Client.new
+# $tumblr_client = Tumblr::Client.new
+
+require 'net/http'
+require 'json'
