@@ -9,3 +9,7 @@
   width: 20%;
   display: inline-block;
 }
+
+#image-box-animated {
+  display: none;
+}

@@ -1,8 +1,16 @@
 <h1>Results for <%= @search_term %></h1>
-
+<div class="results"
 <% @images.each.with_index do |image, image_index| %>
+  <div class="a_result">
   <h3> <%=image_index %> </h3>
   <p><a href="<%=image[:url]%>"> Post URL </a></p>
-  <img src="<%=image[:display_still]["url"]%>">
+  <span id="image-box">
+  <img src="<%=image[:display_still]['url']%>">
+  </span>
+  <span id="image-box-animated">
+    <img src="<%=image[:display]['url']%>">
+  </span>
+  </div>
   <br>
 <% end %>
+</div>

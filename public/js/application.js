@@ -4,19 +4,33 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-  var password = document.getElementById("password")
-  , confirm_password = document.getElementById("confirm_password");
+//   var password = document.getElementById("password")
+//   , confirm_password = document.getElementById("confirm_password");
 
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
-}
+// function validatePassword(){
+//   if(password.value != confirm_password.value) {
+//     confirm_password.setCustomValidity("Passwords Don't Match");
+//   } else {
+//     confirm_password.setCustomValidity('');
+//   }
+// }
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+// password.onchange = validatePassword;
+// confirm_password.onkeyup = validatePassword;
+  $(".results").find("#image-box-animated").hide()
+  $(".results")
+    .mouseenter(".a_result #image-box img", function() {
+      console.log("mouse in!");
+    $(this).find("#image-box-animated").show();
+    $(this).find("#image-box").hide()
+  })
+    .mouseleave(function() {
+      $(this).find("#image-box-animated").hide();
+      $(this).find("#image-box").show()
+    });
+
+
+
 });
 
 
