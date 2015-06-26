@@ -6,12 +6,12 @@ get '/users/new' do
 end
 
 post '/users' do
-  params.delete("confirm_password")
-  @user = User.new(params)
+  data = {user_name: params[:user_name], password: params[:password], email: params[:email]}
+  @user = User.new(data)
 
   if @user.save
     session[:user_id] = @user.id
-    redirect '/'
+    redirect "/users/#{@user.id}"
   else
     @errors = @user.errors.messages
     erb :"/users/new"
@@ -31,14 +31,15 @@ end
 
 get '/users/:id/edit' do |id|
   @user = User.find_by(id: id)
-  redirect "/auctions/#{id}" unless authorized?(user)
+  redirect "/users/#{id}" unless authorized?(@user)
   erb :"users/edit"
 end
 
 put '/users/:id' do |id|
   @user = User.find_by(id: id)
-  redirect "/auctions/#{id}" unless authorized?(user)
-  if @user.update_attributes(params)
+  redirect "/users/#{id}" unless authorized?(@user)
+  data = {user_name: params[:user_name], password: params[:password], email: params[:email]}
+  if @user.update_attributes(data)
     redirect "/users/#{id}"
   else
     erb :"/users/edit"
@@ -47,7 +48,8 @@ end
 
 delete '/users/:id' do |id|
   @user = User.find_by(id: id)
-  redirect "/auctions/#{id}" unless authorized?(user)
+  redirect "/auctions/#{id}" unless authorized?(@user)
   @user.destroy
+  session.clear
   redirect '/users'
 end
