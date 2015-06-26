@@ -1,0 +1,5 @@
+<form name = "edit_account" action="/users/<%=@current_user.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <%= erb :"/users/_form", layout: false %>
+  <input type="submit" value="edit">
+</form>
