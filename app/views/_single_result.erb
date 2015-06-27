@@ -1,0 +1,15 @@
+<div class="a_result">
+<h3> <%=image_index %> </h3>
+  <p><a href="<%=image[:url]%>"> Post URL </a></p>
+  <span class="image-box">
+  <img src="<%=image[:display_still]['url']%>">
+  </span>
+  <!-- <span class="image-box-animated">
+    <img src="<%=image[:display]['url']%>">
+  </span> -->
+  <form name="save_pic" action="/collections/" method="post">
+    <input type="hidden" value='<%= image %>'>
+    <input type=submit value="Save">
+  </form>
+
+  <br>

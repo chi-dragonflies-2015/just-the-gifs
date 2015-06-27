@@ -17,18 +17,25 @@ $(document).ready(function() {
 
 // password.onchange = validatePassword;
 // confirm_password.onkeyup = validatePassword;
-  $(".results").find("#image-box-animated").hide()
   $(".results")
-    .mouseenter(".a_result #image-box img", function() {
+    .mouseenter(".a_result .image-box", function(event) {
       console.log("mouse in!");
-    $(this).find("#image-box-animated").show();
-    $(this).find("#image-box").hide()
+      console.log(this);
+      console.log("ARGH");
+      console.log(event.target);
+      console.log("ARGH AGAIN");
+      var src = $(this).find("img").attr("src");
+      console.log(src);
+      var new_src = src.slice(0, -6);
+      console.log(new_src);
+      $(this).find("img").attr("src", new_src + ".gif");
   })
     .mouseleave(function() {
-      $(this).find("#image-box-animated").hide();
-      $(this).find("#image-box").show()
+      $(event.target).find(".a_result .image-box-animated").hide();
+      $(event.target).find(".a_result .image-box").show()
     });
 
+  $(".results")
 
 
 });
